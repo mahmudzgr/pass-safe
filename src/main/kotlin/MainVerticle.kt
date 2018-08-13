@@ -8,7 +8,7 @@ import io.vertx.ext.web.handler.StaticHandler
 
 class MainVerticle : AbstractVerticle() {
 
-    val staticPath = "public"
+    val staticPath = "public/"
 
     override fun start() {
         val port = (System.getenv("PORT") ?: "8080").toInt()
@@ -18,7 +18,7 @@ class MainVerticle : AbstractVerticle() {
         val apiRouter = createApiRouter()
         router.mountSubRouter("/api", apiRouter)
 
-        val staticRoute = router.route("/*").handler(StaticHandler.create("public/"))
+        val staticRoute = router.route("/*").handler(StaticHandler.create(staticPath))
 
         server.requestHandler(router::accept)
         server.listen(port)
