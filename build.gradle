@@ -20,6 +20,7 @@ dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     compile "io.vertx:vertx-core:$vertx_version"
     compile "io.vertx:vertx-lang-kotlin:$vertx_version"
+    compile "io.vertx:vertx-web:$vertx_version"
 }
 
 // In this section you declare where to find the dependencies of your project
